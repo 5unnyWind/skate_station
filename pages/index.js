@@ -1,6 +1,6 @@
-import React from 'react'
-import { Tabs, Image, useTheme, Card, Spacer } from '@geist-ui/core'
-import { createUseStyles } from 'react-jss'
+import React, { useState } from 'react'
+import { Tabs, Image, useTheme, Card, Spacer, Text, Divider, Collapse,Link } from '@geist-ui/core'
+import { ArrowRightCircle } from '@geist-ui/icons'
 import makeStyles from '../utils/makeStyles'
 
 // const useStyles = make(theme => ({
@@ -18,10 +18,12 @@ import makeStyles from '../utils/makeStyles'
 
 
 export default function index() {
+    const [tab,setTab] = useState('/')
 
     const classes = useStyles()
 
     const Home = () => {
+        const theme = useTheme()
         return <>
             <Spacer></Spacer>
             <div className={classes.card}>
@@ -30,6 +32,44 @@ export default function index() {
                 <div className={classes.mask}></div>
                 <h1 className={classes.centerText}># Skate Station</h1>
             </div>
+            <Spacer h={5}>
+            </Spacer>
+            <Card hoverable>
+                <div className={classes.row}>
+                    <div>
+
+                        <Text h2>Skills</Text>
+                        <Divider style={{ width: '60%' }}></Divider>
+                        <Text style={{ color: theme.palette.accents_4 }}>人在家中躺 板技心中涨</Text>
+                    </div>
+                    <div style={{ 'max-width': '80%', marginLeft: 25 }}>
+                        <Collapse.Group>
+                            <Collapse title="滑板常识" subtitle='INTRODUCTION'>
+                                <Text>HTML（超文本标记语言——HyperText Markup Language）是构成 Web 世界的一砖一瓦。
+                                    它定义了网页内容的含义和结构。除 HTML 以外的其它技术则通常用来描述一个网页的表现与展示效果（如 CSS），或功能与行为（如 JavaScript）。</Text>
+                            </Collapse>
+                            <Collapse title="平地" subtitle='FLATGROUND'>
+                                <Text>花式動作為主，玩法較趨近於一般街頭短板的方式，以翻板(Flip)，轉板(Shovit)等等動作為主
+                                    剛入門滑行開始
+                                    許多人最常碰到的風格應該就屬freestyle了
+                                    平地花式玩法是不侷限於地形                                     平地花式的招式沒有捷徑、但只要慢慢的循序漸進
+                                    從最基本的開始練習
+                                    我们相信你也能感受到那種成招的喜悅。</Text>
+
+                            </Collapse>
+                        </Collapse.Group>
+                    </div>
+                </div>
+                <div>
+                    <Link href='#' onClick={()=>{setTab('/skills')}}>
+                    <Text b className={classes.row} >
+                        详细了解
+                        <Spacer></Spacer>
+                        <ArrowRightCircle></ArrowRightCircle>
+                    </Text>
+                    </Link>
+                </div>
+            </Card>
         </>
     }
 
@@ -39,7 +79,7 @@ export default function index() {
             <div className={[classes.content]}>
                 <div className={classes.row}>
 
-                    <Tabs initialValue='/' align={'center'}>
+                    <Tabs initialValue='/' align={'center'} value={tab} onChange={v=>{setTab(v)}}>
                         <Tabs.Item label={<h3>主页</h3>} value='/'>
                             <Home />
                         </Tabs.Item>
@@ -85,7 +125,7 @@ const useStyles = makeStyles(theme => ({
     card: {
         width: '100%',
         position: 'relative',
-        overflow:'hidden'
+        overflow: 'hidden'
     },
     mask: {
 
@@ -106,6 +146,7 @@ const useStyles = makeStyles(theme => ({
         row: {
             flexDirection: "row",
             flexWrap: "wrap",
+
         },
     }
 }))

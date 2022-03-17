@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@geist-ui/core': ^2.3.6
+  '@geist-ui/icons': ^1.0.1
   next: ^12.1.0
   pnpm: ^6.32.3
   react: ^17.0.2
@@ -10,6 +11,7 @@ specifiers:
 
 dependencies:
   '@geist-ui/core': registry.npmjs.org/@geist-ui/core/2.3.6_react-dom@17.0.2+react@17.0.2
+  '@geist-ui/icons': registry.npmjs.org/@geist-ui/icons/1.0.1_react@17.0.2
   next: registry.npmjs.org/next/12.1.0_react-dom@17.0.2+react@17.0.2
   pnpm: registry.npmjs.org/pnpm/6.32.3
   react: registry.npmjs.org/react/17.0.2
@@ -53,6 +55,18 @@ packages:
       '@babel/runtime': registry.npmjs.org/@babel/runtime/7.17.7
       react: registry.npmjs.org/react/17.0.2
       react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+    dev: false
+
+  registry.npmjs.org/@geist-ui/icons/1.0.1_react@17.0.2:
+    resolution: {integrity: sha512-W+ol1DOk9MNjY9IV0gKbhaKIjif6O+5wxM31CIUUAl6shjRjmwVPxVNFoaVJwiTp0Chp5BQyluHmCWaOOZQCtA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@geist-ui/icons/-/icons-1.0.1.tgz}
+    id: registry.npmjs.org/@geist-ui/icons/1.0.1
+    name: '@geist-ui/icons'
+    version: 1.0.1
+    peerDependencies:
+      '@geist-ui/react': '>=1.0.0'
+      react: '>=16.13.0'
+    dependencies:
+      react: registry.npmjs.org/react/17.0.2
     dev: false
 
   registry.npmjs.org/@next/env/12.1.0:

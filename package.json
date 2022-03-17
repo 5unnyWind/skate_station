@@ -22,6 +22,7 @@
   "homepage": "https://github.com/5unnyWind/skate_station#readme",
   "dependencies": {
     "@geist-ui/core": "^2.3.6",
+    "@geist-ui/icons": "^1.0.1",
     "next": "^12.1.0",
     "pnpm": "^6.32.3",
     "react": "^17.0.2",

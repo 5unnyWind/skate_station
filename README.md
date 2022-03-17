@@ -4,11 +4,14 @@
 ## STACKs:
 **Next.js**:heavy_plus_sign:**GeistUI**:heavy_plus_sign:**Three-fiber**:heavy_plus_sign:**Zustand**:heavy_plus_sign:**Kaboom**
 
+
 ## DEV:
 
 ```bash
-$ pnpm i 
-$ yarn dev
+
+pnpm i 
+yarn dev
+
 ```
 
 

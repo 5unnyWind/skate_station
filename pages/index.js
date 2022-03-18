@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Tabs, Image, useTheme, Card, Spacer, Text, Divider, Collapse,Link } from '@geist-ui/core'
+import { Tabs, Image, useTheme, Card, Spacer, Text, Divider, Collapse, Link } from '@geist-ui/core'
 import { ArrowRightCircle } from '@geist-ui/icons'
 import makeStyles from '../utils/makeStyles'
 
@@ -18,12 +18,12 @@ import makeStyles from '../utils/makeStyles'
 
 
 export default function index() {
-    const [tab,setTab] = useState('/')
-
+    const [tab, setTab] = useState('/')
+    const theme = useTheme()
     const classes = useStyles()
 
+
     const Home = () => {
-        const theme = useTheme()
         return <>
             <Spacer></Spacer>
             <div className={classes.card}>
@@ -52,7 +52,8 @@ export default function index() {
                                 <Text>花式動作為主，玩法較趨近於一般街頭短板的方式，以翻板(Flip)，轉板(Shovit)等等動作為主
                                     剛入門滑行開始
                                     許多人最常碰到的風格應該就屬freestyle了
-                                    平地花式玩法是不侷限於地形                                     平地花式的招式沒有捷徑、但只要慢慢的循序漸進
+                                    平地花式玩法是不侷限於地形
+                                    平地花式的招式沒有捷徑、但只要慢慢的循序漸進
                                     從最基本的開始練習
                                     我们相信你也能感受到那種成招的喜悅。</Text>
 
@@ -61,12 +62,12 @@ export default function index() {
                     </div>
                 </div>
                 <div>
-                    <Link href='#' onClick={()=>{setTab('/skills')}}>
-                    <Text b className={classes.row} >
-                        详细了解
-                        <Spacer></Spacer>
-                        <ArrowRightCircle></ArrowRightCircle>
-                    </Text>
+                    <Link href='javascript:;' onClick={() => { setTab('/skills')}} block >
+                        <Text b className={classes.row} >
+                            详细了解
+                            <Spacer></Spacer>
+                            <ArrowRightCircle></ArrowRightCircle>
+                        </Text>
                     </Link>
                 </div>
             </Card>
@@ -79,7 +80,7 @@ export default function index() {
             <div className={[classes.content]}>
                 <div className={classes.row}>
 
-                    <Tabs initialValue='/' align={'center'} value={tab} onChange={v=>{setTab(v)}}>
+                    <Tabs initialValue='/' align={'center'} value={tab} onChange={v => { setTab(v) }}>
                         <Tabs.Item label={<h3>主页</h3>} value='/'>
                             <Home />
                         </Tabs.Item>

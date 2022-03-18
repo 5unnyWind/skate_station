@@ -23,19 +23,21 @@ export default function index() {
     const classes = useStyles()
 
     const BaseCard = ({ to, children }) => {
-        return <Card hoverable>
+        return (
+            <Card hoverable>
 
-            <div>
-                {children}
-                <Link href='javascript:;' onClick={() => { setTab(to) }} block >
-                    <Text b className={classes.row} >
-                        详细了解
-                        <Spacer></Spacer>
-                        <ArrowRightCircle></ArrowRightCircle>
-                    </Text>
-                </Link>
-            </div>
-        </Card>
+                <div>
+                    {children}
+                    <Link href='javascript:;' onClick={() => { setTab(to) }} block >
+                        <Text b className={classes.row} >
+                            详细了解
+                            <Spacer></Spacer>
+                            <ArrowRightCircle></ArrowRightCircle>
+                        </Text>
+                    </Link>
+                </div>
+            </Card>
+        )
     }
 
     const SkillsCard = () => {
@@ -74,19 +76,23 @@ export default function index() {
 
 
 
-    const Home = () => {
-        return <>
-            <Spacer></Spacer>
-            <div className={classes.card}>
 
-                <Image className={classes.image} src='0.gif' width={100} ></Image>
-                <div className={classes.mask}></div>
-                <h1 className={classes.centerText}># Skate Station</h1>
-            </div>
-            <Spacer h={5}>
-            </Spacer>
-            <SkillsCard></SkillsCard>
-        </>
+    const Home = () => {
+        return (
+            <>
+                <Spacer></Spacer>
+                <div className={classes.card}>
+
+                    <Image className={classes.image} src='0.gif' width={100} ></Image>
+                    <div className={classes.mask}></div>
+                    <h1 className={classes.centerText}># Skate Station</h1>
+                </div>
+                <Spacer h={5}>
+                </Spacer>
+                <SkillsCard></SkillsCard>
+                <NewsCard></NewsCard>
+            </>
+        )
     }
 
 

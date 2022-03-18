@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Tabs, Image, useTheme, Card, Spacer, Text, Divider, Collapse, Link, useTabs } from '@geist-ui/core'
 import { ArrowRightCircle } from '@geist-ui/icons'
+
 import makeStyles from '../utils/makeStyles'
 
 // const useStyles = make(theme => ({
@@ -135,27 +136,9 @@ export default function index() {
         <>
             <div className={[classes.content]}>
                 <div className={classes.row}>
-                    <Tabs align={'center'}  {...bindings} >
-                        <Tabs.Item label={<h3>主页</h3>} value='/'>
-                            <Home />
-                        </Tabs.Item>
-
-                        <Tabs.Item label={<h3>资讯</h3>} value='/news'>
-                        </Tabs.Item>
-
-                        <Tabs.Item label={<h3>板技</h3>} value='/skills'>
-                        </Tabs.Item>
-
-                        <Tabs.Item label={<h3>交流</h3>} value='/talk'>
-                        </Tabs.Item>
-
-                        <Tabs.Item label={<h3>我们</h3>} value='/us'>
-                        </Tabs.Item>
-
-                    </Tabs>
+                    <Home />
                 </div>
             </div>
-
         </>
     )
 }
@@ -178,11 +161,6 @@ const useStyles = makeStyles(theme => ({
         flex: 1,
         justifyContent: "flex-start",
         alignItems: "stretch",
-    },
-    nav: {
-        position: '-webkit-sticky !important',
-        position: 'sticky !important',
-        top: 0,
     },
     card: {
         width: '100%',

@@ -28,13 +28,15 @@ export default function index() {
 
                 <div>
                     {children}
-                    <Link href='javascript:;' onClick={() => { setTab(to) }} block >
-                        <Text b className={classes.row} >
-                            详细了解
-                            <Spacer></Spacer>
-                            <ArrowRightCircle></ArrowRightCircle>
-                        </Text>
-                    </Link>
+                    <Spacer></Spacer>
+                    {to &&
+                        <Link href='javascript:;' onClick={() => { setTab(to) }} block >
+                            <Text b className={classes.row} style={{flexDirection:'row'}}>
+                                详细了解
+                                <Spacer></Spacer>
+                                <ArrowRightCircle></ArrowRightCircle>
+                            </Text>
+                        </Link>}
                 </div>
             </Card>
         )
@@ -74,7 +76,13 @@ export default function index() {
         )
     }
 
+    const NewsCard = () => {
+        return (
+            <BaseCard to={'/news'}>
 
+            </BaseCard>
+        )
+    }
 
 
     const Home = () => {
@@ -89,8 +97,9 @@ export default function index() {
                 </div>
                 <Spacer h={5}>
                 </Spacer>
-                <SkillsCard></SkillsCard>
                 <NewsCard></NewsCard>
+                <Spacer h={5}></Spacer>
+                <SkillsCard></SkillsCard>
             </>
         )
     }
@@ -135,6 +144,7 @@ const useStyles = makeStyles(theme => ({
         padding: `0 ${theme.layout.pageMargin}`,
     },
     row: {
+        // 小屏设备
         display: "flex",
         flexDirection: "column",
         position: "relative",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, useTheme, Card, Spacer, Text, Divider, Collapse, Link, Dot, User, Tooltip, Loading } from '@geist-ui/core'
+import { Image, useTheme, Card, Spacer, Text, Divider, Collapse, Link, Dot, User, Loading, useMediaQuery } from '@geist-ui/core'
 import { ArrowRightCircle } from '@geist-ui/icons'
 
 import makeStyles from '../utils/makeStyles'
@@ -9,6 +9,7 @@ import { Loader } from '@geist-ui/icons'
 export default function index() {
     const theme = useTheme()
     const classes = useStyles()
+    const upMD = useMediaQuery('md', { match: 'up' })
 
     const BaseCard = ({ to, children }) => {
         return (
@@ -104,19 +105,24 @@ export default function index() {
                         <Text style={{ color: theme.palette.accents_4 }}>拿起滑板 抢回街道</Text>
                     </div>
                     <div style={{ width: '80%', marginLeft: 35 }}>
-                        <Divider type='default'>正在进行的活动</Divider>
-                        <div style={{ display: "flex", width:'100%',flexDirection: 'row' }}>
-                            <Dot type='success' />
-                            <User src='avator.jpg' name='Aye'></User>
+                        <Divider type='default'>正在进行</Divider>
+                        <div style={{ display: "flex", width: '100%', flexDirection: 'row' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column'}}>
+                                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                    <Dot type='success' />
+                                    <User src='avator.jpg' name='Aye'></User>
+                                </div>
+                                {upMD || <Text  style={{ color: theme.palette.accents_4, flex: 1, textAlign: 'center' }}> 2022/3/19 </Text>}
+                            </div>
                             <Text> 正在八一广场直播过6立</Text>
-                            <Text style={{ color: theme.palette.accents_4 ,flex:1,textAlign:'end'}}> 2022/3/19 </Text>
+                            {upMD && <Text style={{ color: theme.palette.accents_4, flex: 1, textAlign: 'end' }}> 2022/3/19 </Text>}
                         </div>
                         <Spacer></Spacer>
-                        <Divider type='default'>已经结束的活动</Divider>
-                        <Text style={{textAlign:'center'}}>
+                        <Divider type='default'>已经结束</Divider>
+                        <Text style={{ textAlign: 'center' }}>
                             <Spacer></Spacer>
-                            <Loading />    
-                        </Text> 
+                            <Loading />
+                        </Text>
                     </div>
                 </div>
             </BaseCard>
@@ -131,7 +137,7 @@ export default function index() {
                 <div className={classes.card}>
                     <Image className={classes.image} src='0.gif' width={100} ></Image>
                     <div className={classes.mask}></div>
-                    <h1 className={classes.centerText}># Skate Station</h1>
+                    <h1 className={classes.centerText}>#NCU Gothic</h1>
                 </div>
                 <Spacer h={5} />
                 <ActiCard />

@@ -1,6 +1,7 @@
 import { GeistProvider, CssBaseline, Themes, useTheme } from '@geist-ui/core'
 import '../styles/globals.css'
 import Menu from '../components/menu/menu'
+import { JssProvider } from 'react-jss'
 
 
 function MyApp({ Component, pageProps }) {
@@ -13,6 +14,8 @@ function MyApp({ Component, pageProps }) {
     })
 
     return (
+      <JssProvider>
+
         <GeistProvider themeType='ayu-dark' themes={[ayu]}>
             <CssBaseline />
             <Menu></Menu>
@@ -30,8 +33,9 @@ function MyApp({ Component, pageProps }) {
             background-color: ${theme.palette.accents_2};
             border-radius: ${theme.layout.radius};
           }
-        `}</style>
+          `}</style>
         </GeistProvider>
+          </JssProvider>
     )
 }
 

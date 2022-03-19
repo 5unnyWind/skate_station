@@ -31,7 +31,7 @@ export default function index() {
                     {children}
                     <Spacer></Spacer>
                     {to &&
-                        <Link href='javascript:;' onClick={() => { setTab(to) }} block >
+                        <Link href='/' onClick={() => { setTab(to) }} block >
                             <Text b className={classes.row} style={{ flexDirection: 'row' }}>
                                 详细了解
                                 <Spacer></Spacer>

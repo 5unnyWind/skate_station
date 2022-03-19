@@ -5,23 +5,23 @@ import { JssProvider } from 'react-jss'
 
 
 function MyApp({ Component, pageProps }) {
-    const theme = useTheme()
-    const ayu = Themes.createFromDark({
-        type: 'ayu-dark',
-        palette: {
-            background: '#1f2430'
-        }
-    })
+  const theme = useTheme()
+  const ayu = Themes.createFromDark({
+    type: 'ayu-dark',
+    palette: {
+      background: '#1f2430'
+    }
+  })
 
-    return (
-      <JssProvider>
+  return (
+    <JssProvider>
 
-        <GeistProvider themeType='ayu-dark' themes={[ayu]}>
-            <CssBaseline />
-            <Menu></Menu>
-            <Component {...pageProps} />
+      <GeistProvider themeType='ayu-dark' themes={[ayu]}>
+        <CssBaseline />
+        <Menu></Menu>
+        <Component {...pageProps} />
 
-            <style global jsx>{`
+        <style global jsx>{`
           html {
             --geist-page-nav-height: 64px;
           }
@@ -34,9 +34,9 @@ function MyApp({ Component, pageProps }) {
             border-radius: ${theme.layout.radius};
           }
           `}</style>
-        </GeistProvider>
-          </JssProvider>
-    )
+      </GeistProvider>
+    </JssProvider>
+  )
 }
 
 export default MyApp

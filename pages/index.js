@@ -1,25 +1,11 @@
-import React, { useState } from 'react'
-import { Tabs, Image, useTheme, Card, Spacer, Text, Divider, Collapse, Link, useTabs } from '@geist-ui/core'
+import React from 'react'
+import { Image, useTheme, Card, Spacer, Text, Divider, Collapse, Link } from '@geist-ui/core'
 import { ArrowRightCircle } from '@geist-ui/icons'
 
 import makeStyles from '../utils/makeStyles'
 
-// const useStyles = make(theme => ({
-//     content: {
-//         width: theme.layout.pageWidthWithMargin,
-//         margin: "0 auto",
-//     }
-// }))
-
-// function make(styles) {
-//     const theme = useTheme()
-//     return createUseStyles(styles(theme))
-// }
-
-
 
 export default function index() {
-    const { setState: setTab, bindings } = useTabs('/')
     const theme = useTheme()
     const classes = useStyles()
 
@@ -31,7 +17,7 @@ export default function index() {
                     {children}
                     <Spacer></Spacer>
                     {to &&
-                        <Link href='/' onClick={() => { setTab(to) }} block >
+                        <Link href={to} block >
                             <Text b className={classes.row} style={{ flexDirection: 'row' }}>
                                 详细了解
                                 <Spacer></Spacer>
@@ -124,9 +110,9 @@ export default function index() {
                 </div>
                 <Spacer h={5}>
                 </Spacer>
-                <NewsCard></NewsCard>
-                <Spacer h={5}></Spacer>
                 <SkillsCard></SkillsCard>
+                <Spacer h={5}></Spacer>
+                <NewsCard></NewsCard>
             </>
         )
     }

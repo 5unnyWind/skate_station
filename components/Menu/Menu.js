@@ -1,11 +1,16 @@
 import { Tabs, useTheme } from '@geist-ui/core';
-import { useTabs } from '@geist-ui/core';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useCallback } from 'react';
 import { addColorAlpha } from '../../utils/color.js'
 
-const Menu = () => {
-  const { setState: setTab, bindings } = useTabs('/')
+const Menu = ({
+}) => {
   const theme = useTheme()
+  const router = useRouter()
+  const currentTab = router.route
+  const handleTabChange = useCallback((v)=>{
+    router.push(v)
+  },[currentTab])
   return (
     <>
       <div className="menu-wrapper">
@@ -13,11 +18,13 @@ const Menu = () => {
           <div className="content">
             <div className="tabs">
               <Tabs
-                {...bindings}
+                initialValue='/'
+                value={currentTab}
                 leftSpace={0}
                 align="center"
                 hideDivider
                 hideBorder
+                onChange={handleTabChange}
               >
                 <Tabs.Item label={<h3>主页</h3>} value='/'>
                 </Tabs.Item>

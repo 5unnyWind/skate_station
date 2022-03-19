@@ -1,6 +1,6 @@
-import { GeistProvider, CssBaseline, Themes, useTheme } from '@geist-ui/core'
+import { GeistProvider, CssBaseline, Themes, useTheme, useTabs } from '@geist-ui/core'
 import '../styles/globals.css'
-import Menu from '../components/menu/menu'
+import Menu from '../components/Menu/Menu'
 import { JssProvider } from 'react-jss'
 
 
@@ -15,7 +15,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <JssProvider>
-
       <GeistProvider themeType='ayu-dark' themes={[ayu]}>
         <CssBaseline />
         <Menu></Menu>

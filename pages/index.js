@@ -103,7 +103,7 @@ export default function index() {
                         <Text style={{ color: theme.palette.accents_4 }}>拿起滑板 抢回街道</Text>
                     </div>
                     <div style={{ maxWidth: '80%', marginLeft: 35 }}>
-                    <Collapse.Group>
+                        <Collapse.Group>
                             <Collapse title="滑板常识" subtitle='INTRODUCTION'>
                                 <Text>HTML（超文本标记语言——HyperText Markup Language）是构成 Web 世界的一砖一瓦。
                                     它定义了网页内容的含义和结构。除 HTML 以外的其它技术则通常用来描述一个网页的表现与展示效果（如 CSS），
@@ -177,11 +177,11 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "flex-start",
         alignItems: "stretch",
     },
-    column:{
+    column: {
         display: "flex",
         flexDirection: "column",
         position: "relative",
-        width:'100%',
+        width: '100%',
         // flex: 1,
         // alignItems: "stretch",
     },

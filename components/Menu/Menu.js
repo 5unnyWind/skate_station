@@ -35,7 +35,7 @@ const Menu = ({
                 <Tabs.Item label={<h3>板技</h3>} value='/skills'>
                 </Tabs.Item>
 
-                <Tabs.Item label={<h3>交流</h3>} value='/talk'>
+                <Tabs.Item label={<h3>活动</h3>} value='/activities'>
                 </Tabs.Item>
 
                 <Tabs.Item label={<h3>我们</h3>} value='/us'>

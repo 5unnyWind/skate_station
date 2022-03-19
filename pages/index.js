@@ -148,6 +148,13 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "flex-start",
         alignItems: "stretch",
     },
+    [`@media screen and (min-width: ${theme.layout.pageWidthWithMargin})`]: {
+        row: {
+            flexDirection: "row",
+            flexWrap: "wrap",
+
+        },
+    },
     card: {
         width: '100%',
         position: 'relative',
@@ -170,11 +177,4 @@ const useStyles = makeStyles(theme => ({
         top: '50%',
         transform: 'translateX(-50%) translateY(-50%)'
     },
-    [`@media screen and (min-width: ${theme.layout.pageWidthWithMargin})`]: {
-        row: {
-            flexDirection: "row",
-            flexWrap: "wrap",
-
-        },
-    }
 }))

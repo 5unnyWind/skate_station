@@ -27,7 +27,7 @@ export default {
             posterUrl: 'https://gitee.com/sunny_f/img-bed/raw/master/00c65e334f892ba652d7e81035e6e37546a6d673.jpg@672w_378h_1c_100q.jpg',
         },
         {
-            videoName: '快速上班/收板',
+            videoName: '快速上板/收板',
             number: 'BV1Xt41187Y8',
             get videoUrl() { return biliBaseUrl + this.number },
             posterUrl: 'https://gitee.com/sunny_f/img-bed/raw/master/90b4a50cea5b7cadd3822de21fd2c3e16d543939.jpg@672w_378h_1c_100q.jpg',

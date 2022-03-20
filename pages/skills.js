@@ -1,4 +1,4 @@
-import { Divider, Card, Spacer, Text, Link, Note, Tag, Loading } from '@geist-ui/core'
+import { Divider, Card, Spacer, Text, Link, Note, Tag, Loading, Tooltip } from '@geist-ui/core'
 import React from 'react'
 import data from '../data/skills'
 import makeStyles from '../utils/makeStyles'
@@ -28,7 +28,12 @@ export default function skills() {
       <div className={[classes.content]}>
 
         <Spacer />
-        <Note type='warning' filled>以下教程集合由<Tag type="warning" invert> 一鸣儿 </Tag>整理提供</Note>
+        <Note type='warning' filled>以下教程集合由
+          <Tag type="warning" invert>
+            <Tooltip text='17级已毕业老社长' placement='bottom'>
+              一鸣儿
+            </Tooltip>
+          </Tag>整理提供</Note>
         <Spacer />
 
         <Divider h={3} >关于滑行</Divider>

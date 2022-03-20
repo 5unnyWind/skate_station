@@ -1,4 +1,4 @@
-import { Divider, Card, Spacer, Text, Link } from '@geist-ui/core'
+import { Divider, Card, Spacer, Text, Link, Note, Tag, Loading } from '@geist-ui/core'
 import React from 'react'
 import data from '../data/skills'
 import makeStyles from '../utils/makeStyles'
@@ -14,7 +14,7 @@ export default function skills() {
     posterUrl = '',
   }) => {
     return (
-      <Card className={classes.card} h={10} hoverable style={{ backgroundImage: `url(${posterUrl})`, backgroundSize: 'cover' ,marginBottom:'10px'}}>
+      <Card className={classes.card} h={10} hoverable style={{ backgroundImage: `url(${posterUrl})`, backgroundSize: 'cover', marginBottom: '10px' }}>
         <Link href={videoUrl}>
           <div className={classes.mask}></div>
           <Text h3 className={classes.centerText}>{videoName}</Text>
@@ -26,11 +26,36 @@ export default function skills() {
   return (
     <>
       <div className={[classes.content]}>
+
         <Spacer />
-        <Divider h={5} >关于滑行</Divider>
+        <Note type='warning' filled>以下教程集合由<Tag type="warning" invert> 一鸣儿 </Tag>整理提供</Note>
         <Spacer />
 
+        <Divider h={3} >关于滑行</Divider>
+        <Spacer />
         {data['滑行'].map((v, key) => (<VideoCard {...v} key={key} />))}
+        <Spacer h={5} />
+
+        <Divider h={3} >关于刹车</Divider>
+        <Spacer />
+        {data['刹车'].map((v, key) => (<VideoCard {...v} key={key} />))}
+        <Spacer h={5} />
+
+        <Divider h={3} >入门动作</Divider>
+        <Spacer />
+        {data['入门动作'].map((v, key) => (<VideoCard {...v} key={key} />))}
+        <Spacer h={5} />
+
+        <Divider h={3} >进阶动作</Divider>
+        <Spacer />
+        {data['进阶动作'].map((v, key) => (<VideoCard {...v} key={key} />))}
+        <Loading type='warning'>暂无</Loading>
+        <Spacer h={5} />
+
+        <Divider h={3} >其他</Divider>
+        <Spacer />
+        {data['其他'].map((v, key) => (<VideoCard {...v} key={key} />))}
+        <Spacer h={5} />
 
       </div>
     </>

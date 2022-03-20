@@ -15,6 +15,8 @@ export default function us() {
                 <Text span type="error">i</Text>
                 <Text span style={{ color: '#ccc' }}>g</Text>
                 <Text span type="warning">n</Text>
+                <Text span type="secondary">e</Text>
+                <Text span style={{ color: '#ccc' }}>d</Text>
                 <Text span type="success" ml="5px">By</Text>
                 <Tooltip text='sunny-wind@qq.com' placement='bottom'>
                     <User style={{ position: 'relative', top: 5 }} src='https://gitee.com/sunny_f/img-bed/raw/master/tinytf.jpg' name='听枫' ></User>

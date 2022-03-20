@@ -4,6 +4,7 @@ import Menu from '../components/Menu/Menu'
 import { JssProvider } from 'react-jss'
 
 
+
 function MyApp({ Component, pageProps }) {
   const theme = useTheme()
   const ayu = Themes.createFromDark({
@@ -19,7 +20,6 @@ function MyApp({ Component, pageProps }) {
         <CssBaseline />
         <Menu></Menu>
         <Component {...pageProps} />
-
         <style global jsx>{`
           html {
             --geist-page-nav-height: 64px;

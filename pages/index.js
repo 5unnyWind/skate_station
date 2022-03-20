@@ -106,7 +106,7 @@ export default function index() {
                         <Divider type='default'>正在进行</Divider>
                         <div style={{ display: "flex", width: '100%', flexDirection: 'row' }}>
                             <Dot type='success' />
-                            <User src='avator.jpg' name='Aye'></User>
+                            <User src='avatar.jpg' name='Aye'></User>
                             <Text> 正在八一广场直播过6立</Text>
                             {/* {upMD && <Text style={{ color: theme.palette.accents_4, flex: 1, textAlign: 'end' }}> 2022/3/19 </Text>} */}
                         </div>

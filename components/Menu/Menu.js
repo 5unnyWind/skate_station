@@ -29,7 +29,7 @@ const Menu = ({
                 <Tabs.Item label={<h3>主页</h3>} value='/'>
                 </Tabs.Item>
 
-                <Tabs.Item label={<h3>资讯</h3>} value='/news'>
+                <Tabs.Item label={<h3>板圈</h3>} value='/news'>
                 </Tabs.Item>
 
                 <Tabs.Item label={<h3>板技</h3>} value='/skills'>
